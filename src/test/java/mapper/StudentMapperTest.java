@@ -47,8 +47,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * 字段 NOT IN (v0, v1, ...
  */
 
+
 class StudentMapperTest
 {
+    /**
+     * Eq.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void eq() throws IOException
     {
@@ -75,6 +81,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * Ne.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void ne() throws IOException
     {
@@ -101,6 +112,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * Gt.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void gt() throws IOException
     {
@@ -127,6 +143,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * Ge.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void ge() throws IOException
     {
@@ -153,6 +174,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * Lt.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void lt() throws IOException
     {
@@ -179,6 +205,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * Le.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void le() throws IOException
     {
@@ -205,6 +236,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * Between.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void between() throws IOException
     {
@@ -231,6 +267,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * Not between.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void notBetween() throws IOException
     {
@@ -257,6 +298,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * In.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void in() throws IOException
     {
@@ -283,6 +329,11 @@ class StudentMapperTest
         sqlSession.close();
     }
 
+    /**
+     * Not in.
+     *
+     * @throws IOException the io exception
+     */
     @Test
     public void notIn() throws IOException
     {
