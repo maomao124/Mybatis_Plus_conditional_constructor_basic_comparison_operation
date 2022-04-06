@@ -256,4 +256,56 @@ class StudentMapperTest
 
         sqlSession.close();
     }
+
+    @Test
+    public void in() throws IOException
+    {
+        String resource = "mybatis-config.xml";
+        //读取配置文件mybatis-config.xml
+        InputStream config = Resources.getResourceAsStream(resource);
+        //根据配置文件构建SqlSessionFactory
+        SqlSessionFactory sqlSessionFactory = new MybatisSqlSessionFactoryBuilder().build(config);
+        //通过SqlSessionFactory创建SqlSession
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+
+        QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
+        queryWrapper.in("class_no", 1003L, 1005L);
+
+        List<Student> list = studentMapper.selectList(queryWrapper);
+        for (Student student : list)
+        {
+            System.out.print(student);
+        }
+
+        System.out.println("数量：" + list.size());
+
+        sqlSession.close();
+    }
+
+    @Test
+    public void notIn() throws IOException
+    {
+        String resource = "mybatis-config.xml";
+        //读取配置文件mybatis-config.xml
+        InputStream config = Resources.getResourceAsStream(resource);
+        //根据配置文件构建SqlSessionFactory
+        SqlSessionFactory sqlSessionFactory = new MybatisSqlSessionFactoryBuilder().build(config);
+        //通过SqlSessionFactory创建SqlSession
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+
+        QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
+        queryWrapper.notIn("class_no", 1003L, 1005L);
+
+        List<Student> list = studentMapper.selectList(queryWrapper);
+        for (Student student : list)
+        {
+            System.out.print(student);
+        }
+
+        System.out.println("数量：" + list.size());
+
+        sqlSession.close();
+    }
 }
